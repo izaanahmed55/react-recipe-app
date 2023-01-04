@@ -49,7 +49,7 @@ export const Popular = () => {
                         return (
                             <SplideSlide key={recipes.id}>
                                 <Card>
-                                    <Link to={'/recipe' + recipes.id}>
+                                    <Link to={'/recipe/'+recipes.id}>
                                         <p>{recipes.title}</p>
                                         <img
                                             src={recipes.image}
