@@ -13,12 +13,15 @@ export const Recipe = () => {
   const fetchDetails = async () => {
     const data = await fetch(`https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${import.meta.env.VITE_API_KEY}`);
     const detailData = await data.json();
-
+    setDetails(detailData);
+     console.log(detailData)
   }
 
   useEffect(() => {
     fetchDetails();
   }, [params.name]);
+  useEffect(() => {console.log(details.instructions)
+  }, [details]);
 
   return (
     <DetailWrapper>
@@ -31,17 +34,25 @@ export const Recipe = () => {
         <Button className={activeTab === 'ingredients' ? 'active' : ''} onClick={() => setActiveTab('ingredients')}> Ingredients </Button>
         {activeTab === 'instructions' && (
           <div>
-            <h3 dangerouslySetInnerHTML={{__html: details.summary}}>
+            <span dangerouslySetInnerHTML={{__html: details.summary}}>
+              {details.summary}
+            </span>
+            {/* <h3 dangerouslySetInnerHTML={{__html: details.instructions}}>
+              {details.instructions}
+            </h3> */}
+             {/* <h3 >
               {details.summary}
             </h3>
-            <h3 dangerouslySetInnerHTML={{__html: details.instructions}}>
+            <h3 >
               {details.instructions}
-            </h3>
+            </h3> */}
           </div>
         )}
         {activeTab === 'ingredients' && (
           <ul>
-            {details.extendedIngredients.map((ingredients) => {
+            {
+            details?.extendedIngredients?.map((ingredients) => {
+              console.log(ingredients);
               <li key={ingredients.id}>{ingredients.original}</li>
             })}
           </ul>
