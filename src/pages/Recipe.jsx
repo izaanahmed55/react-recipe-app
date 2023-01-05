@@ -34,18 +34,18 @@ export const Recipe = () => {
         <Button className={activeTab === 'ingredients' ? 'active' : ''} onClick={() => setActiveTab('ingredients')}> Ingredients </Button>
         {activeTab === 'instructions' && (
           <div>
-            <span dangerouslySetInnerHTML={{__html: details.summary}}>
+            {/* <span dangerouslySetInnerHTML={{__html: details.summary}}>
               {details.summary}
-            </span>
+            </span> */}
             {/* <h3 dangerouslySetInnerHTML={{__html: details.instructions}}>
               {details.instructions}
             </h3> */}
-             {/* <h3 >
+            <h3 >
               {details.summary}
             </h3>
             <h3 >
               {details.instructions}
-            </h3> */}
+            </h3>
           </div>
         )}
         {activeTab === 'ingredients' && (
