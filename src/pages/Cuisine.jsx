@@ -44,12 +44,12 @@ export const Cuisine = () => {
 const Grid = styled(motion.div)`
     display: grid;
     grid-template-colums: repeat(auto-fit, minmax(20rem, 1fr));
-    grid-gap: 3rem;
+    grid-gap: 2rem;
 `;
 
 const Card = styled.div`
     img{
-        width: 100%;
+        width: 70%;
         border-radius: 2rem;
     }
     a{

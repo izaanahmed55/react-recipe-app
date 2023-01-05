@@ -1,5 +1,6 @@
-import {FaPizzaSlice, FaHamburger} from "react-icons/fa";
+import {FaPizzaSlice, FaHamburger, FaHome} from "react-icons/fa";
 import {GiNoodles, GiChopsticks} from "react-icons/gi";
+// import { BsBackspaceFill } from "react-icons/bs";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
@@ -7,6 +8,10 @@ export const Category = () => {
   return (
     <>
     <List>
+    <SLink to={"/"}>
+        <FaHome/>
+        <h4>Home</h4>
+    </SLink>
     <SLink to={"/cuisine/Italian"}>
         <FaPizzaSlice/>
         <h4>Italian</h4>
@@ -40,7 +45,7 @@ const SLink = styled(NavLink)`
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    margin-right: 2rem;
+    // margin-right: 2rem;
     text-decoration: none;
     // background: linear-gradient(35deg, #494949, #313131)
     background: gray;
